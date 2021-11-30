@@ -32,7 +32,7 @@
         </tr>
         <% }); %>
         <tr>
-            <td colspan="6" align="right"><b>Total: </b> $<%= parseFloat(total).toFixed(2) %></td>
+            <td colspan="6" align="right"><b>Total: </b> ₹<%= parseFloat(total).toFixed(2) %></td>
         </tr>
         <tr>
             <td colspan="5" align="right">
@@ -47,7 +47,7 @@
     <form class="pp" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
         <input type="hidden" name="cmd" value="_cart">
         <input type="hidden" name="upload" value="1">
-        <input type="hidden" name="business" value="jultranet-facilitator@gmail.com">
+        <input type="hidden" name="business" value="saloni.mca19.du@gmail.com">
         <% var num = 0; %>
         <% cart.forEach(function(p){ %>
             <% num++ %>
@@ -55,7 +55,7 @@
             <input type="hidden" name="amount_<%= num %>" value="<%= p.price %>">
             <input type="hidden" name="quantity_<%= num %>" value="<%= p.qty %>">
         <% }); %>
-        <input type="hidden" name="currency_code" value="USD">
+        <input type="hidden" name="currency_code" value="INR">
         <input type="hidden" name="amount" value="<%= total %>">
         <input type="image" src="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
         </form>
